@@ -1,35 +1,36 @@
 import math
 
-def angle (ang):
-    result = math.pi - (ang + (math.pi / 2))
+def calculateAngle (angle):
+    result = math.pi - (angle + (math.pi / 2))
     return result
 
-def calc (a, b):
-    ang1 = math.atan(a / b)
-    ang2 = math.atan(b / a)
-    return ang1, ang2
+def calculateAngles (a, b):
+    angle1 = math.atan(a / b)
+    angle2 = math.atan(b / a)
+    return angle1, angle2
 
 def main ():
-    ans = input("El triangulo rectangulo tiene un angulo dado? [S/N]: ")
-    if ans == 's':
-        data = math.radians(int(input("Ingresa el valor del angulo: ")))
-        if data >= (math.pi/2):
-            return print("El angulo no puede ser mayor o igual a 90 grados o pi radianes"), main()
+    hasAngle = input("El triángulo rectángulo tiene un ángulo dado? [S/N]: ")
+    if hasAngle.lower() == 's':
+        angleValue = int(input("Ingresa el valor del ángulo en radianes: "))
+        angleValueInRadians = math.radians(angleValue)
+        if angleValueInRadians >= math.pi / 2:
+            return print("El ángulo no puede ser mayor o igual a 90 grados o pi radianes"), main()
         else:
-            ang = angle(data)
-            ans = input("Resultado en [R]adianes o [G]rados?: ")
-            if ans == 'r':
-                print(f'el angulo es {ang} radianes')
+            angle = calculateAngle(angleValue)
+            unitToPrint = input("Resultado en [R]adianes o [G]rados?: ")
+            if unitToPrint.lower() == 'r':
+                print(f'el ángulo es {angle} radianes')
             else:
-                print(f'el angulo es {math.degrees(ang)} grados')
+                print(f'el ángulo es {math.degrees(angle)} grados')
     else:
-        valA = int(input("Ingresa el valor de a: "))
-        valB = int(input("Ingresa el valor de b: "))
-        angs = calc(valA, valB)
-        ans = input("Resultado en [R]adianes o [G]rados?: ")
-        if ans == 'r':
-            print(f'los angulos son {angs[0]} y {angs[1]} radianes')
+        sideA = int(input("Ingresa el valor del lado A: "))
+        sideB = int(input("Ingresa el valor del lado B: "))
+        angle1, angle2 = calculateAngles(sideA, sideB)
+        unitToPrint = input("Resultado en [R]adianes o [G]rados?: ")
+        if unitToPrint.lower() == 'r':
+            print(f'los angulos son {angle1} y {angle2} radianes')
         else:
-            print(f'los angulos son {math.degrees(angs[0])} y {math.degrees(angs[1])} grados')
+            print(f'los angulos son {math.degrees(angle1)} y {math.degrees(angle2)} grados')
 
 main()
