@@ -13,7 +13,6 @@ def main ():
     hasAngle = input("El triángulo rectángulo tiene un ángulo dado? [S/N]: ")
     if hasAngle.lower() == 's':
         angleValue = float(input("Ingresa el valor del ángulo en radianes: "))
-        print(angleValue)
         if angleValue >= math.pi / 2:
             return print("El ángulo no puede ser mayor o igual a 90 grados o pi / 2 radianes"), main()
         else:
