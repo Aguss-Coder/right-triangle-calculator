@@ -12,17 +12,17 @@ def calculateAngles (a, b):
 def main ():
     hasAngle = input("El triángulo rectángulo tiene un ángulo dado? [S/N]: ")
     if hasAngle.lower() == 's':
-        angleValue = int(input("Ingresa el valor del ángulo en radianes: "))
-        angleValueInRadians = math.radians(angleValue)
-        if angleValueInRadians >= math.pi / 2:
-            return print("El ángulo no puede ser mayor o igual a 90 grados o pi radianes"), main()
+        angleValue = float(input("Ingresa el valor del ángulo en radianes: "))
+        print(angleValue)
+        if angleValue >= math.pi / 2:
+            return print("El ángulo no puede ser mayor o igual a 90 grados o pi / 2 radianes"), main()
         else:
             angle = calculateAngle(angleValue)
             unitToPrint = input("Resultado en [R]adianes o [G]rados?: ")
             if unitToPrint.lower() == 'r':
                 print(f'el ángulo es {angle} radianes')
             else:
-                print(f'el ángulo es {math.degrees(angle)} grados')
+                print(f'el ángulo es {math.trunc(math.degrees(angle))} grados')
     else:
         sideA = int(input("Ingresa el valor del lado A: "))
         sideB = int(input("Ingresa el valor del lado B: "))
