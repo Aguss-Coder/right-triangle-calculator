@@ -9,9 +9,9 @@ def calculateOneAngleFromAnother ():
         angle = math.pi - (angleValue + (math.pi / 2))
         isResultInDegrees = isUnitDegrees()
         if isResultInDegrees:
-            print(f'el ángulo es {math.trunc(math.degrees(angle))} grados')
-        else:
             print(f'el ángulo es {angle} radianes')
+        else:
+            print(f'el ángulo es {math.degrees(angle)} grados')
 
 def calculateBothAngles ():
     sideA = int(input("Ingresa el valor del lado A: "))
@@ -20,9 +20,9 @@ def calculateBothAngles ():
     angle2 = math.atan(sideB / sideA)
     isResultInDegrees = isUnitDegrees()
     if isResultInDegrees:
-        print(f'los angulos son {math.degrees(angle1)} y {math.degrees(angle2)} grados')
-    else:
         print(f'los angulos son {angle1} y {angle2} radianes')
+    else:
+        print(f'los angulos son {math.degrees(angle1)} y {math.degrees(angle2)} grados')
 
 
 def isUnitDegrees ():
