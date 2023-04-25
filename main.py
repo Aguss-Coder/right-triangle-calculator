@@ -1,29 +1,5 @@
-import math
-
-def calculateOneAngleFromAnother ():
-    angleValue = float(input("Ingresa el valor del ángulo en radianes: "))
-
-    if angleValue >= math.pi / 2:
-        return print("El ángulo no puede ser mayor o igual a 90 grados o pi / 2 radianes"), calculateOneAngleFromAnother()
-    else:
-        angle = math.pi - (angleValue + (math.pi / 2))
-        isResultInDegrees = isUnitDegrees()
-        if isResultInDegrees:
-            print(f'el ángulo es {angle} radianes')
-        else:
-            print(f'el ángulo es {math.degrees(angle)} grados')
-
-def calculateBothAngles ():
-    sideA = int(input("Ingresa el valor del lado A: "))
-    sideB = int(input("Ingresa el valor del lado B: "))
-    angle1 = math.atan(sideA / sideB)
-    angle2 = math.atan(sideB / sideA)
-    isResultInDegrees = isUnitDegrees()
-    if isResultInDegrees:
-        print(f'los angulos son {angle1} y {angle2} radianes')
-    else:
-        print(f'los angulos son {math.degrees(angle1)} y {math.degrees(angle2)} grados')
-
+from oneAngle import calculateOneAngleFromAnother
+from twoAngles import calculateBothAngles
 
 def isUnitDegrees ():
     unitToPrint = input("Resultado en [R]adianes o [G]rados?: ")
